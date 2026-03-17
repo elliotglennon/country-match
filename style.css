@@ -282,7 +282,10 @@ html, body {
 
 .shape-path {
   fill: currentColor;
-  opacity: 0.82;
+  opacity: 0.85;
+  stroke: currentColor;
+  stroke-width: 0.8;
+  stroke-linejoin: round;
 }
 
 .shape-missing {
