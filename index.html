@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading / Error Screen -->
+  <div id="loading-screen" class="screen">
+    <h1 class="game-title">Country Match</h1>
+    <p id="loading-message">Loading countries…</p>
+    <button id="retry-btn" class="btn" hidden>Try Again</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen" hidden>
+    <header class="game-header">
+      <h1 class="game-title">Country Match</h1>
+      <div class="stats-bar">
+        <span id="stat-matched">Matched: 0 / 5</span>
+        <span id="stat-mistakes">Mistakes: 0</span>
+      </div>
+    </header>
+    <div id="progress-dots" class="progress-dots"></div>
+    <div id="card-grid" class="card-grid"></div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="results-screen" class="screen" hidden>
+    <div class="results-card">
+      <h1 class="game-title">Well done!</h1>
+      <div class="results-stats">
+        <div class="results-stat">
+          <span class="results-label">Time</span>
+          <span id="result-time" class="results-value">—</span>
+        </div>
+        <div class="results-stat">
+          <span class="results-label">Mistakes</span>
+          <span id="result-mistakes" class="results-value">—</span>
+        </div>
+      </div>
+      <button id="play-again-btn" class="btn btn--large">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
