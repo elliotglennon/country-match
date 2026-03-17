@@ -6,15 +6,39 @@
   <title>Country Match</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Loading / Error Screen -->
+  <!-- Start / Loading Screen -->
   <div id="loading-screen" class="screen">
     <h1 class="game-title">Country Match</h1>
-    <p id="loading-message">Loading countries…</p>
+    <p class="game-subtitle">Match each country to its flag, capital, population &amp; shape</p>
+
+    <div id="difficulty-picker">
+      <p class="difficulty-label">Choose a difficulty</p>
+      <div class="difficulty-grid">
+        <button class="btn btn--diff" data-difficulty="easy">
+          <span class="diff-name">Easy</span>
+          <span class="diff-desc">Well-known nations</span>
+        </button>
+        <button class="btn btn--diff" data-difficulty="medium">
+          <span class="diff-name">Medium</span>
+          <span class="diff-desc">Mixed difficulty</span>
+        </button>
+        <button class="btn btn--diff" data-difficulty="hard">
+          <span class="diff-name">Hard</span>
+          <span class="diff-desc">Mostly unfamiliar</span>
+        </button>
+        <button class="btn btn--diff" data-difficulty="expert">
+          <span class="diff-name">Expert</span>
+          <span class="diff-desc">True geography test</span>
+        </button>
+      </div>
+    </div>
+
+    <p id="loading-message" hidden>Loading countries…</p>
     <button id="retry-btn" class="btn" hidden>Try Again</button>
   </div>
 
@@ -28,7 +52,9 @@
       </div>
     </header>
     <div id="progress-dots" class="progress-dots"></div>
-    <div id="card-grid" class="card-grid"></div>
+    <div class="grid-wrapper">
+      <div id="card-grid" class="card-grid"></div>
+    </div>
   </div>
 
   <!-- Results Screen -->
@@ -49,6 +75,8 @@
     </div>
   </div>
 
+  <!-- topojson-client exposes global `topojson` — must load before script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
